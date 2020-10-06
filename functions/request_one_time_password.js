@@ -13,7 +13,7 @@ module.exports = (req, res) => {
         .then(userRecord => {
             const code = Math.floor(Math.random() * 8999 + 1000);
             return twilio.messages.create({
-                body: 'Your code is' + code,
+                body: 'Your code is ' + code,
                 to: phone,
                 from: account.phoneNumber
             }, (err) => {
